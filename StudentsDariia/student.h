@@ -32,6 +32,7 @@ typedef struct
 Student * newStudent(Student * database, int * size);
 Student * isStudentInClass(Student * database, int size, char studentName[MAX_LENGTH]);
 void scanAgeFromUser(Student * database, int size);
+void scanGradesFromUser(Student * database, int size);
 float searchAverage(Student * database, int size);
 void infoOneStudent(Student * database, int size);
 

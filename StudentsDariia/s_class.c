@@ -6,16 +6,19 @@ void infoAllStudents(Student * database, int size)
 
 	printf("\n");
 
+	if (size == 0)
+		printf("No found students in database!");
+
 	for (i = 0; i < size; ++i)
 	{
-		printf("%d. %s, %d. Grades: ", i + 1, database[i].name, CURRENT_YEAR - database[i].age);
+		printf("%d. %-10s %d. Grades: ", i + 1, database[i].name, CURRENT_YEAR - database[i].age);
 		
 		for (j = 0; j < NUM_OF_GRADES; ++j)
 		{
-			printf("%d, ", database[i].grades[j]);
+			printf("%-2d, ", database[i].grades[j]);
 		}
 
-		printf("Averade: %.2f\n", database[i].average);
+		printf("Averade: %-2.2f\n", database[i].average);
 	}
 }
 

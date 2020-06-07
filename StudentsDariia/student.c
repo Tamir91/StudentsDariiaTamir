@@ -3,8 +3,7 @@
 Student * newStudent(Student * database, int * size)
 {
 	char buffer[MAX_LENGTH];
-	int age, i, grade, is_equal = FALSE;
-	float average = 0.0;
+	int  is_equal = FALSE;
 	Student * temp = NULL;
 
 	if (*size < MAX_NUM_OF_STUDENTS)
@@ -28,10 +27,8 @@ Student * newStudent(Student * database, int * size)
 				strcpy(database[*size].name, buffer);
 			}
 
-			scanAgeFromUser(database, &size);
-			scanGradesFromUser(database, &size);
-
-			
+			scanAgeFromUser(database, *size);
+			scanGradesFromUser(database, *size);
 		}
 		++*size;
 	}
@@ -68,9 +65,9 @@ void scanAgeFromUser(Student *database, int size) {
 	return;
 }
 
-int scanGradesFromUser(Student *database, int size) {
+void scanGradesFromUser(Student *database, int size) {
 	int i, grade;
-	float average;
+	float average = 0;
 	for (i = 0; i < NUM_OF_GRADES; ++i)
 	{
 		do
@@ -87,6 +84,8 @@ int scanGradesFromUser(Student *database, int size) {
 
 	average /= NUM_OF_GRADES;
 	database[size].average = average;
+
+	return;
 }
 
 float searchAverage(Student * database, int size)
