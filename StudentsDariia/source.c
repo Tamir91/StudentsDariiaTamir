@@ -1,4 +1,4 @@
-// Conditional compilation
+// This program create data base for students.
 // Lab Work 5. Exercise 12
 // 
 /********************************************************
@@ -35,7 +35,7 @@ int main(void)
 		switch (choise)
 		{
 			case '1':
-				database = newStudent(database, &size);
+				newStudent(database, &size);
 				break;
 			case '2':
 				searchAverage(database, size);

@@ -1,5 +1,6 @@
 #include "s_class.h"
 
+
 void infoAllStudents(Student * database, int size)
 {
 	int i, j;
@@ -7,18 +8,24 @@ void infoAllStudents(Student * database, int size)
 	printf("\n");
 
 	if (size == 0)
-		printf("No found students in database!");
-
-	for (i = 0; i < size; ++i)
 	{
-		printf("%d. %-10s %d. Grades: ", i + 1, database[i].name, CURRENT_YEAR - database[i].age);
-		
-		for (j = 0; j < NUM_OF_GRADES; ++j)
-		{
-			printf("%-2d, ", database[i].grades[j]);
-		}
+		printf("No found students in database!");
+	}
+	else
+	{
+		calcAverageForAllStudents(database, size);
 
-		printf("Averade: %-2.2f\n", database[i].average);
+		for (i = 0; i < size; ++i)
+		{
+			printf("%d. %-10s %d. Grades: ", i + 1, database[i].name, CURRENT_YEAR - database[i].age);
+
+			for (j = 0; j < NUM_OF_GRADES; ++j)
+			{
+				printf("%-2d, ", database[i].grades[j]);
+			}
+
+			printf("Averade: %-2.2f\n", database[i].average);
+		}
 	}
 }
 

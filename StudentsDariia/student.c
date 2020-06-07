@@ -1,6 +1,6 @@
 #include "student.h"
 
-Student * newStudent(Student * database, int * size)
+void newStudent(Student * database, int * size)
 {
 	char buffer[MAX_LENGTH];
 	int  is_equal = FALSE;
@@ -33,7 +33,7 @@ Student * newStudent(Student * database, int * size)
 		++*size;
 	}
 
-	return (database);
+	return ;
 }
 
 Student * isStudentInClass(Student * database, int size, char studentName[MAX_LENGTH]) {
@@ -67,7 +67,7 @@ void scanAgeFromUser(Student *database, int size) {
 
 void scanGradesFromUser(Student *database, int size) {
 	int i, grade;
-	float average = 0;
+
 	for (i = 0; i < NUM_OF_GRADES; ++i)
 	{
 		do
@@ -77,21 +77,34 @@ void scanGradesFromUser(Student *database, int size) {
 			{
 				database[size].grades[i] = grade;
 			}
+			database[size].average = 0;
+
 		} while (grade < MIN_GRADE || grade > MAX_GRADE);
-
-		average += grade;
 	}
-
-	average /= NUM_OF_GRADES;
-	database[size].average = average;
-
 	return;
 }
 
-float searchAverage(Student * database, int size)
+void calcAverageForAllStudents(Student * database, int size)
 {
+	int i, j;
+	float sum = 0;
 
-	return (0);
+	printf("\n");
+
+	if (size == 0)
+		printf("No found students in database!");
+
+	for (i = 0; i < size; ++i)
+	{
+
+		for (j = 0; j < NUM_OF_GRADES; ++j)
+		{
+			sum +=  database[i].grades[j];
+		}
+		database[size].average = sum / NUM_OF_GRADES;
+		sum = 0;
+	}
+	return;
 }
 
 void infoOneStudent(Student * database, int size)
