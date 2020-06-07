@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source.c" />
+    <ClCompile Include="student.c" />
+    <ClCompile Include="s_class.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="student.h" />
+    <ClInclude Include="s_class.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{80214989-9793-4A67-A958-D957611BC1F0}</ProjectGuid>
@@ -122,15 +131,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\source.c" />
-    <ClCompile Include="..\..\..\..\Downloads\student.c" />
-    <ClCompile Include="..\..\..\..\Downloads\s_class.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\student.h" />
-    <ClInclude Include="..\..\..\..\Downloads\s_class.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
