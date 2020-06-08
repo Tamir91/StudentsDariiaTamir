@@ -36,9 +36,10 @@ int main(void)
 		{
 			case '1':
 				newStudent(database, &size);
+				calcAverageForAllStudents(&database, size);
 				break;
 			case '2':
-				calcAverageForAllStudents(database, size);
+				calcAverageForAllStudents(&database, size);
 				break;
 			case '3':
 				infoOneStudent(database, size);

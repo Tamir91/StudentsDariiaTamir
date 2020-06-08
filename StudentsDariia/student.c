@@ -77,14 +77,15 @@ void scanGradesFromUser(Student *database, int size) {
 			{
 				database[size].grades[i] = grade;
 			}
-			database[size].average = 0;
-
 		} while (grade < MIN_GRADE || grade > MAX_GRADE);
+
+		database[size].average = 0;
 	}
+
 	return;
 }
 
-void calcAverageForAllStudents(Student * database, int size)
+void calcAverageForAllStudents(Student ** database, int size)
 {
 	int i, j;
 	float sum = 0;
@@ -99,9 +100,10 @@ void calcAverageForAllStudents(Student * database, int size)
 
 		for (j = 0; j < NUM_OF_GRADES; ++j)
 		{
-			sum +=  database[i].grades[j];
+			sum +=  (*database)[i].grades[j];
 		}
-		database[size].average = sum / NUM_OF_GRADES;
+		
+		(*database)[i].average = sum / NUM_OF_GRADES;
 		sum = 0;
 	}
 	return;

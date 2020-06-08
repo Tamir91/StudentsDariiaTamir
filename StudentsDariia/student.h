@@ -83,7 +83,7 @@ Arguments:
 	• size - number of students in class
 
 Return value: void */
-void calcAverageForAllStudents(Student * database, int size);
+void calcAverageForAllStudents(Student ** database, int size);
 
 /* infoOneStudent
 -------------------------------------------------------------------------------

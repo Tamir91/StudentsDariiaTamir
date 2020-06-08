@@ -13,8 +13,6 @@ void infoAllStudents(Student * database, int size)
 	}
 	else
 	{
-		calcAverageForAllStudents(database, size);
-
 		for (i = 0; i < size; ++i)
 		{
 			printf("%d. %-10s %d. Grades: ", i + 1, database[i].name, CURRENT_YEAR - database[i].age);
