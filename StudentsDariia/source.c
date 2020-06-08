@@ -38,7 +38,7 @@ int main(void)
 				newStudent(database, &size);
 				break;
 			case '2':
-				searchAverage(database, size);
+				calcAverageForAllStudents(database, size);
 				break;
 			case '3':
 				infoOneStudent(database, size);
